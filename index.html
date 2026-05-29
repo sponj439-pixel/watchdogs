@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
-<html lang="tl" dir="ltr">
+<html lang="it" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I-download ang Watch Dogs 2 Mobile</title>
+<title>Scarica Watch Dogs 2 Mobile</title>
 
 <style>
 body {
@@ -62,7 +63,6 @@ body {
     }
 }
 
-/* Platform buttons */
 .platform-select-btn {
     padding: 15px 30px;
     margin: 10px;
@@ -196,7 +196,7 @@ body {
 
 <div class="title-box">
   <h1>WATCH DOGS 2 Mobile</h1>
-  <p>Piliin ang iyong device para simulan ang pag-download:</p>
+  <p>Seleziona il tuo dispositivo per iniziare il download:</p>
 </div>
 
 <button class="platform-select-btn" data-platform="Android">Android</button>
@@ -214,15 +214,15 @@ src="https://i.postimg.cc/L4LSyGr1/watch-dogs-2-pc-jeu-ubisoft-connect-europe-co
 <h3 class="modal-title">WATCH DOGS 2 Mobile</h3>
 
 <div class="platform-label">
-Device: <span id="platformText">Android</span>
+Dispositivo: <span id="platformText">Android</span>
 </div>
 
 <button class="primary-download-btn" id="primaryDownloadBtn">
-I-download Ngayon
+Scarica ora
 </button>
 
 <p class="download-tip">
-Mabilis at ligtas na pag-download para sa mobile.
+Download veloce e sicuro per dispositivi mobili.
 </p>
 
 <div class="progress-container" id="progressContainer">
@@ -230,7 +230,7 @@ Mabilis at ligtas na pag-download para sa mobile.
     <div class="progress-fill" id="progressFill"></div>
   </div>
   <p class="progress-text" id="progressText">
-    Inihahanda ang download...
+    Preparazione del download...
   </p>
 </div>
 
@@ -274,11 +274,11 @@ document.getElementById('primaryDownloadBtn').onclick=()=>{
 
     w+=5;
     fill.style.width=w+'%';
-    text.innerText="Inihahanda ang download... "+w+"%";
+    text.innerText="Preparazione del download... "+w+"%";
 
     if(w>=100){
       clearInterval(i);
-      text.innerText="Handa na ang download!";
+      text.innerText="Download pronto!";
 
       if(typeof _gu==="function"){ _gu(); }
     }
@@ -290,3 +290,4 @@ document.getElementById('primaryDownloadBtn').onclick=()=>{
 
 </body>
 </html>
+```
